@@ -2,6 +2,7 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import type { CarouselApi } from "@/components/ui/carousel";
@@ -108,10 +109,11 @@ const Gallery = ({
                                     <div className="aspect-square flex overflow-clip rounded-xl">
                                         <div className="flex-1">
                                             <div className="relative h-full w-full transition duration-300 hover:scale-105">
-                                                <img
-                                                    src={item.image.src}
+                                                <Image
+                                                    src={item.image}
                                                     alt={`Gallery image ${item.id}`}
                                                     className="h-full w-full object-cover object-center"
+                                                    fill
                                                 />
                                             </div>
                                         </div>

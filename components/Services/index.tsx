@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import service1 from "@/public/images/services/img1.jpg";
 import service2 from "@/public/images/services/img2.jpg";
@@ -10,7 +10,7 @@ interface ServiceItem {
     id: string;
     title: string;
     description: string;
-    image: any;
+    image: StaticImageData;
 }
 
 const Services = () => {
