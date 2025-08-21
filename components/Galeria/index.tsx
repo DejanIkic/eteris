@@ -65,75 +65,77 @@ const Gallery = ({
 
     return (
         <section className="py-32 h-screen text-foreground" id="galeria">
-            <div className="container mx-auto">
-                <div
-                    className="flex  justify-center align-center p-6 text-foreground
+            <div className="max-w-7xl mx-auto">
+                <div className="container mx-auto">
+                    <div
+                        className="flex  justify-center align-center p-6 text-foreground
                 "
-                >
-                    <h2 className="text-2xl font-light font-forum  ">
-                        {heading}
-                    </h2>
-                    <div className="mt-8 flex shrink-0 items-center justify-start gap-2"></div>
+                    >
+                        <h2 className="text-2xl font-light font-forum  ">
+                            {heading}
+                        </h2>
+                        <div className="mt-8 flex shrink-0 items-center justify-start gap-2"></div>
+                    </div>
                 </div>
-            </div>
-            <div className="w-full max-w-full flex items-center justify-center px-5">
-                <Button
-                    size="icon"
-                    variant="outline"
-                    onClick={() => {
-                        carouselApi?.scrollPrev();
-                    }}
-                    disabled={!canScrollPrev}
-                    className="disabled:pointer-events-auto"
-                >
-                    <ArrowLeft className="size-5" />
-                </Button>
-                <Carousel
-                    setApi={setCarouselApi}
-                    opts={{
-                        breakpoints: {
-                            "(max-width: 768px)": {
-                                dragFree: true,
+                <div className="w-full max-w-full flex items-center justify-center px-5">
+                    <Button
+                        size="icon"
+                        variant="outline"
+                        onClick={() => {
+                            carouselApi?.scrollPrev();
+                        }}
+                        disabled={!canScrollPrev}
+                        className="disabled:pointer-events-auto"
+                    >
+                        <ArrowLeft className="size-5" />
+                    </Button>
+                    <Carousel
+                        setApi={setCarouselApi}
+                        opts={{
+                            breakpoints: {
+                                "(max-width: 768px)": {
+                                    dragFree: true,
+                                },
                             },
-                        },
-                    }}
-                    className="relative w-full max-w-full"
-                >
-                    <CarouselContent className="w-full max-w-full">
-                        {items.map((item) => (
-                            <CarouselItem
-                                key={item.id}
-                                className="md:basis-1/2 lg:basis-1/3"
-                            >
-                                <div className="p-4">
-                                    <div className="aspect-square flex overflow-clip rounded-xl">
-                                        <div className="flex-1">
-                                            <div className="relative h-full w-full transition duration-300 hover:scale-105">
-                                                <Image
-                                                    src={item.image}
-                                                    alt={`Gallery image ${item.id}`}
-                                                    className="h-full w-full object-cover object-center"
-                                                    fill
-                                                />
+                        }}
+                        className="relative w-full max-w-full"
+                    >
+                        <CarouselContent className="w-full max-w-full">
+                            {items.map((item) => (
+                                <CarouselItem
+                                    key={item.id}
+                                    className="md:basis-1/2 lg:basis-1/3"
+                                >
+                                    <div className="p-4">
+                                        <div className="aspect-square flex overflow-clip rounded-xl">
+                                            <div className="flex-1">
+                                                <div className="relative h-full w-full transition duration-300 hover:scale-105">
+                                                    <Image
+                                                        src={item.image}
+                                                        alt={`Gallery image ${item.id}`}
+                                                        className="h-full w-full object-cover object-center"
+                                                        fill
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                </Carousel>
-                <Button
-                    size="icon"
-                    variant="outline"
-                    onClick={() => {
-                        carouselApi?.scrollNext();
-                    }}
-                    disabled={!canScrollNext}
-                    className="disabled:pointer-events-auto"
-                >
-                    <ArrowRight className="size-5" />
-                </Button>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                    </Carousel>
+                    <Button
+                        size="icon"
+                        variant="outline"
+                        onClick={() => {
+                            carouselApi?.scrollNext();
+                        }}
+                        disabled={!canScrollNext}
+                        className="disabled:pointer-events-auto"
+                    >
+                        <ArrowRight className="size-5" />
+                    </Button>
+                </div>
             </div>
         </section>
     );

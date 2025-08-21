@@ -24,9 +24,9 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="w-full bg-foreground text-background py-16 px-4 sm:px-6"
+            className="w-full bg-foreground text-background py-16 px-4 sm:px-6 "
         >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
                 {/* Contact Form */}
                 <EmailForm />
 

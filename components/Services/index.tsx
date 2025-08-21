@@ -47,7 +47,7 @@ const Services = () => {
 
     return (
         <section className="py-32 h-screen text-foreground" id="services">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 max-w-7xl">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl font-light font-forum mb-4">
                         Usluge
